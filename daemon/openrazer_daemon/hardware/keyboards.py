@@ -407,7 +407,7 @@ class RazerBlackWidowV4TKLWireless(_RippleKeyboard):
     USB_PID = 0x02d5
     HAS_MATRIX = True
     WAVE_DIRS = (1, 2)
-    MATRIX_DIMS = [6, 19]
+    MATRIX_DIMS = [6, 18]
     POLL_RATES = [125, 250, 500, 1000]
     METHODS = ['get_device_type_keyboard', 'set_wave_effect', 'set_static_effect', 'set_spectrum_effect',
                'set_reactive_effect', 'set_none_effect', 'set_breath_random_effect', 'set_breath_single_effect', 'set_breath_dual_effect',
@@ -430,7 +430,7 @@ class RazerBlackWidowV4TKLWired(_RippleKeyboard):
     USB_PID = 0x02d7
     HAS_MATRIX = True
     WAVE_DIRS = (1, 2)
-    MATRIX_DIMS = [6, 19]
+    MATRIX_DIMS = [6, 18]
     POLL_RATES = [125, 250, 500, 1000]
     METHODS = ['get_device_type_keyboard', 'set_wave_effect', 'set_static_effect', 'set_spectrum_effect',
                'set_reactive_effect', 'set_none_effect', 'set_breath_random_effect', 'set_breath_single_effect', 'set_breath_dual_effect',
