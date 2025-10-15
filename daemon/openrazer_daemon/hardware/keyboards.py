@@ -404,7 +404,7 @@ class RazerBlackWidowV4TKLWireless(_RippleKeyboard):
     EVENT_FILE_REGEX = re.compile(r'.*Razer_Razer_BlackWidow_V4_Tenkeyless_HyperSpeed(_\d+)?(-if01)?-event-mouse')
 
     USB_VID = 0x1532
-    USB_PID = 0x02d5
+    USB_PID = 0x02D5
     HAS_MATRIX = True
     WAVE_DIRS = (1, 2)
     MATRIX_DIMS = [6, 18]
@@ -427,7 +427,7 @@ class RazerBlackWidowV4TKLWired(_RippleKeyboard):
     EVENT_FILE_REGEX = re.compile(r'.*Razer_Razer_BlackWidow_V4_Tenkeyless_HyperSpeed(-if01)?-event-kbd')
 
     USB_VID = 0x1532
-    USB_PID = 0x02d7
+    USB_PID = 0x02D7
     HAS_MATRIX = True
     WAVE_DIRS = (1, 2)
     MATRIX_DIMS = [6, 18]
