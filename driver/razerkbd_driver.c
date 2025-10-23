@@ -358,7 +358,6 @@ static void razer_get_report_params(struct usb_device *usb_dev, uint *report_ind
     case USB_DEVICE_ID_RAZER_BLACKWIDOW_V3_TK:
     case USB_DEVICE_ID_RAZER_BLACKWIDOW_V3_PRO_WIRED:
     case USB_DEVICE_ID_RAZER_BLACKWIDOW_V4_X:
-    case USB_DEVICE_ID_RAZER_BLACKWIDOW_V4_TKL_WIRELESS:
         *report_index = 0x02;
         *response_index = 0x02;
         *wait_min = RAZER_BLACKWIDOW_CHROMA_WAIT_MIN_US;
@@ -376,6 +375,12 @@ static void razer_get_report_params(struct usb_device *usb_dev, uint *report_ind
         *response_index = 0x02;
         *wait_min = RAZER_DEATHSTALKER_V2_WIRELESS_WAIT_MIN_US;
         *wait_max = RAZER_DEATHSTALKER_V2_WIRELESS_WAIT_MAX_US;
+        break;
+    case USB_DEVICE_ID_RAZER_BLACKWIDOW_V4_TKL_WIRELESS:
+        *report_index = 0x02;
+        *response_index = 0x02;
+        *wait_min = RAZER_BLACKWIDOW_V4_TKL_WIRELESS_WAIT_MIN_US;
+        *wait_max = RAZER_BLACKWIDOW_V4_TKL_WIRELESS_WAIT_MAX_US;
         break;
     default:
         *report_index = 0x01;
@@ -1648,8 +1653,6 @@ static ssize_t razer_attr_write_macro_led_effect(struct device *dev, struct devi
     case USB_DEVICE_ID_RAZER_DEATHSTALKER_V2_PRO_TKL_WIRELESS:
     case USB_DEVICE_ID_RAZER_DEATHSTALKER_V2_PRO_TKL_WIRED:
     case USB_DEVICE_ID_RAZER_HUNTSMAN_V3_PRO:
-    case USB_DEVICE_ID_RAZER_BLACKWIDOW_V4_TKL_WIRELESS:
-    case USB_DEVICE_ID_RAZER_BLACKWIDOW_V4_TKL_WIRED:
         request = razer_chroma_standard_set_led_effect(VARSTORE, MACRO_LED, enabled);
         request.transaction_id.id = 0xFF;
         break;
@@ -5112,8 +5115,6 @@ static int razer_kbd_probe(struct hid_device *hdev, const struct hid_device_id *
             CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_matrix_effect_custom);          // Custom effect
             CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_matrix_custom_frame);           // Set LED matrix
             CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_game_led_state);                // Enable game mode & LED
-            CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_macro_led_state);               // Enable macro LED
-            CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_macro_led_effect);              // Change macro LED effect (static, flashing)
             CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_poll_rate);                     // Poll Rate
             CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_charge_level);                  // Charge level
             CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_charge_status);                 // Charge status
@@ -5639,8 +5640,6 @@ static void razer_kbd_disconnect(struct hid_device *hdev)
             device_remove_file(&hdev->dev, &dev_attr_matrix_effect_custom);          // Custom effect
             device_remove_file(&hdev->dev, &dev_attr_matrix_custom_frame);           // Set LED matrix
             device_remove_file(&hdev->dev, &dev_attr_game_led_state);                // Enable game mode & LED
-            device_remove_file(&hdev->dev, &dev_attr_macro_led_state);               // Enable macro LED
-            device_remove_file(&hdev->dev, &dev_attr_macro_led_effect);              // Change macro LED effect (static, flashing)
             device_remove_file(&hdev->dev, &dev_attr_poll_rate);                     // Poll Rate
             device_remove_file(&hdev->dev, &dev_attr_charge_level);                  // Charge level
             device_remove_file(&hdev->dev, &dev_attr_charge_status);                 // Charge status

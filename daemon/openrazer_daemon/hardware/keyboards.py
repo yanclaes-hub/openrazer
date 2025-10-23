@@ -411,8 +411,7 @@ class RazerBlackWidowV4TKLWired(_RippleKeyboard):
     POLL_RATES = [125, 250, 500, 1000]
     METHODS = ['get_device_type_keyboard', 'set_wave_effect', 'set_static_effect', 'set_spectrum_effect',
                'set_reactive_effect', 'set_none_effect', 'set_breath_random_effect', 'set_breath_single_effect', 'set_breath_dual_effect',
-               'set_custom_effect', 'set_key_row', 'get_game_mode', 'set_game_mode', 'get_macro_mode', 'set_macro_mode',
-               'get_macro_effect', 'set_macro_effect', 'get_macros', 'delete_macro', 'add_macro',
+               'set_custom_effect', 'set_key_row', 'get_game_mode', 'set_game_mode',
                'set_starlight_random_effect', 'set_starlight_single_effect', 'set_starlight_dual_effect',
                'get_poll_rate', 'set_poll_rate', 'get_supported_poll_rates',
                'set_ripple_effect', 'set_ripple_effect_random_colour', 'get_battery', 'is_charging']
@@ -424,9 +423,8 @@ class RazerBlackWidowV4TKLWireless(RazerBlackWidowV4TKLWired):
     """
     Class for the Razer BlackWidow V4 Tenkeyless HyperSpeed Wireless
     """
-
-    USB_PID = 0x02D5
     EVENT_FILE_REGEX = re.compile(r'.*Razer_Razer_BlackWidow_V4_Tenkeyless_HyperSpeed(_\d+)?(-if01)?-event-mouse')
+    USB_PID = 0x02D5
 
 
 class RazerBlackWidowChroma(_RippleKeyboard):
