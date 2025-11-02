@@ -397,7 +397,7 @@ class RazerBlackWidowV3ProWireless(RazerBlackWidowV3ProWired):
     DEVICE_IMAGE = "https://dl.razerzone.com/src/3809-1-EN-v1.png"
 
 
-class RazerBlackWidowV4TKLWired(_RippleKeyboard):
+class RazerBlackWidowV4TenkeylessHyperSpeedWired(_RippleKeyboard):
     """
     Class for the Razer BlackWidow V4 Tenkeyless HyperSpeed Wired
     """
@@ -419,7 +419,7 @@ class RazerBlackWidowV4TKLWired(_RippleKeyboard):
     DEVICE_IMAGE = "https://dl.razerzone.com/src2/15142/15142-1-en-v1.png"
 
 
-class RazerBlackWidowV4TKLWireless(RazerBlackWidowV4TKLWired):
+class RazerBlackWidowV4TenkeylessHyperSpeedWireless(RazerBlackWidowV4TenkeylessHyperSpeedWired):
     """
     Class for the Razer BlackWidow V4 Tenkeyless HyperSpeed Wireless
     """
